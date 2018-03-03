@@ -1,0 +1,33 @@
+<div class="todo-form">
+    <input type="text" name="title" [(ngModel)]="title" />
+    <button type="button" (click)="createTask()">Добавить</button>
+</div>
+
+
+<div>
+    <ul>
+        <task *ngFor="let task of allTasks" 
+        [taskItem]="task" 
+        (onDelete)="deleteTask($event)"></task>
+    </ul>
+</div>
+
+
+
+
+<!-- <div class="todo-list">
+            <div class="todo-item" [class.completed]="task.completed">
+                <button class="checkbox icon" (click)="onToggle()">
+                    <i class="material-icons">{{task.completed ? 'check_box' : 'check_box_outline_blank' }}</i>
+                </button>
+        
+                <span class="title">{{ task.title }}</span>
+        
+                <div class="actions">
+                  <button class="delite icon" (click)="onDelete()">
+                    <i class="material-icons">delete</i>
+                  </button>
+                </div>
+            </div>
+        
+ </div> -->
